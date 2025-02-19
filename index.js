@@ -1,7 +1,7 @@
-import { post } from 'axios';
+const axios = require('axios');
 
 // configuration
-const config = require('./config.json');
+const config = require('./config/config.json');
 
 const engine = async () => {
     const payload = {
@@ -75,7 +75,7 @@ const engine = async () => {
     };
 
     try {
-        const response = await post("https://api-neo.bullx.io/v2/api/getNeoVisionV3", payload, { headers });
+        const response = await axios.post("https://api-neo.bullx.io/v2/api/getNeoVisionV3", payload, { headers });
         console.log(response.data);
     } catch (error) {
         console.error('Error:', error.response ? error.response.data : error.message);
