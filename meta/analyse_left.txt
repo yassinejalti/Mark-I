@@ -1,0 +1,10 @@
+--------------------------------------
+
+[AI analyse] =  -symbol
+		-name
+		-twitter
+		-website
+		-telegram
+		-imgUrl
+		(medium? reddit?)
+

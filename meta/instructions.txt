@@ -1,0 +1,142 @@
+-Build realtime connection with Dex screener API and Internal System using websockets:
+
+*mission summary*
+I've collected some api end points. firs is an HTTP api from dex screener:
+
+<for getting the newly created tokens> (maybe I'll use something else) 
+https://api.dexscreener.com/token-profiles/latest/v1
+
+<for getting extra informations about a preticular token>
+https://api.dexscreener.com/token-pairs/v1/solana/{tokenAddresses}
+https://api.dexscreener.com/tokens/v1/solana/{tokenAddresses}
+
+Also I found some useful pump.fun endpoints:
+
+<websocket to connect with realtime data on pump.fun>
+wss://pumpportal.fun/api/data
+
+<get the king of the hill in pump.fun (only scrapping)>
+https://frontend-api-v3.pump.fun/coins/king-of-the-hill?includeNsfw=false
+
+
+<but nothing is better than this one>
+we got an api : https://photon-sol.tinyastro.io/api/discover/search?xxx
+
+<api websocket is done successfully>
+repo name: photon-sol-ws-middleware
+
+<next is the filter process>
+we'll use a bot designed to do this task
+**see the documentation docs picture**
+
+<finally I finished all the connection parts photon-sol!>
+mission status: D0NE.
+
+*****************
+
+-write the filter bot class to smartly remove & classify memecoins due to their importance.
+
+*mission summary*
+
+<analysing what's the best way to define what's a good memecoin according to data>
+
+<creating a multilayer method to filter data in database>
+
+-constructed a group of methods to hardly analyse and filter every token before sending it to main enums
+
+<bot is done and all the filters are working perfectly>
+
+*****************
+
+-write a Class to make the initial filter for the data and extract the good quality memecoin.
+
+-write a Class for checking the memecoin's safety.
+
+<we just started the reasoning!>
+
+-visualisation part is done.
+what does that mean?
+
+It means that the simulation of the event of *someone seeing a memecoin gaining monumetum and checking it out* is done.
+the MPD now is capable of checking all the lunched memecoins at super sonic speed and decide which one is gaining popularity.
+
+so the next step is the professional's analyse for the coin (imagine orangie analysing it):
+
+-for detecting unsafe memecoins I have to approache it that way:
+what defines an unauthentic memecoin?
+> because it's going to rugpull making me loose money.
+
+I've made a checklist from orangie strategy to follow:
+DO NOT TALORATE!
+ORANGIE INVESTIGATE MEMECOINS DEEPLY
+(orangie does +10 hours staring at the screen everyday)
+(MPD will be 24/24 7/7 staring and analysing every memecoin that comes out)
+
+**************
+
+-classic rug check
+-identify copy memecoins
+
+**************
+
+-check the bundle & dev rugpulls.
+types of dev scammers:
+
+beginner scammer:
+1) make a memecoin and buy initialy a big portion or a small one.
+HOW TO AVOID: only allow 3.75%
+
+2) wait until it pumps up.
+3) sell on them
+
+intermediate scammer:
+1 create memecoin and buys nothing.
+2 buy memecoin with other wallets at a short period of time.
+3 hold a large amounth of portion until it pumps and he dumps on everyone.
+
+bundler scammer:
+1 buy initially with his wallet.
+2 uses other wallets to buy and sell amounts of token at a consistent rate
+2 uses the same amounts in every transaction
+3 dump on everyone when it peeks
+
+Advanced scammer:
+????
+
+-- after some analysists
+We found out that usually memecoins has a lot of insiders & snipers & dev holdings & top holders
+and the really good one are the ones who survive the crash after all the insiders & snipers & dev holdings & top holders leave.
+Q:
+How much time does it take for a coin to crash or survive ?
+Does a coin with a lot of insiders even go higher ?
+When to remove the junk coins ?
+Is it a good idea to buy a memecoin with tons of insiders ?
+
+**************
+-check the twitter account recycle.
+
+-check website recycle.
+**************
+
+*****************
+next time :
+*****************
+-twitter tracker (for next walls)
+-wallet tracker (for next walls)
+*****************
+
+<all completed and done.>
+
+-write a Class to check the memecoin's narative.
+
+///
+
+-write a Class to detect Whales movement.
+
+-write a Class to Interact with the AI Model.
+-> it should be able to generate the "AI STORY"
+-> send a query to the AI & recieve response
+-> send Alerts to the Dev monitor
+-> construct the summary of the token to the Dev monitor
+-> execute the automated actions if set
+-> add to the blackList & whiteList
