@@ -1,44 +1,24 @@
 -- main token data table
 
 CREATE TABLE token_data (
-    id VARCHAR(255) PRIMARY KEY, -- done
-    type VARCHAR(255), -- not needed
-    volume DOUBLE DEFAULT 1, -- missing
-    buys_count INT DEFAULT 1, -- done
-    sells_count INT DEFAULT 1, -- done
-    address VARCHAR(255), -- not needed
-    tokenAddress VARCHAR(255), -- done
-    fdv DOUBLE DEFAULT 1, -- marketCapUSD
-    price_usd DOUBLE DEFAULT 1, -- price
-    name VARCHAR(255), -- name
-    symbol VARCHAR(255), -- symbol
-    created_timestamp BIGINT, -- creationTimestamp
-    open_timestamp BIGINT, -- not needed
-    init_liq_usd DOUBLE DEFAULT 1, -- missing
-    init_liq_quote DOUBLE DEFAULT 1, -- initialQuoteLiquidity
-    init_liq_token DOUBLE DEFAULT 1, -- initialLiquidityETH
-    init_liq_timestamp BIGINT, -- not needed
-    cur_liq_quote DOUBLE DEFAULT 1,
-    cur_liq_usd DOUBLE DEFAULT 1,
-    mint_authority BOOLEAN,
-    freeze_authority BOOLEAN,
-    lp_burned_perc DOUBLE, -- liquidityPoolBurnPercentage
-    top_holders_perc DOUBLE, -- top10HoldersSupplyPerc
-    twitter VARCHAR(255), -- links
-    website VARCHAR(255), -- links
-    telegram VARCHAR(255), -- not needed
-    medium VARCHAR(255), -- not needed
-    reddit VARCHAR(255), -- not needed
-    dex_i INT, -- origin
-    ignored BOOLEAN, -- isDevRug
-    fromPump BOOLEAN, -- not needed
-    fromMoonshot BOOLEAN, -- not needed
-    fromMemeDex VARCHAR(255), -- not needed
-    imgUrl VARCHAR(255),  -- missing
-    weighted_avg_composite_score DOUBLE, -- NULL
-    cumulative_composite_growth DOUBLE, -- NULL
-    priority_level DOUBLE DEFAULT 0,
-    internal_update_timestamp BIGINT
+    id VARCHAR(255) PRIMARY KEY, -- Unique identifier for the token
+    volume DOUBLE, -- Volume in USD (5-minute interval)
+    buys_count INT, -- Number of buys
+    sells_count INT, -- Number of sells
+    address VARCHAR(255), -- Token contract address
+    marketCap DOUBLE, -- Market capitalization in USD
+    name VARCHAR(255), -- Token name
+    symbol VARCHAR(255), -- Token symbol
+    cur_liq_usd DOUBLE, -- Current liquidity in USD
+    lp_burned_perc DOUBLE, -- Percentage of liquidity pool burned
+    top_holders_perc DOUBLE, -- Percentage of supply held by top 10 holders
+    twitter VARCHAR(255), -- Twitter link (optional)
+    website VARCHAR(255), -- Website link (optional)
+    created_timestamp BIGINT, -- Timestamp of token creation
+    weighted_avg_composite_score DOUBLE, -- Weighted average composite score
+    cumulative_composite_growth DOUBLE, -- Cumulative composite growth
+    priority_level DOUBLE DEFAULT 0, -- Priority level (default is 0)
+    internal_update_timestamp BIGINT -- Timestamp of the last internal update
 );
 
 -- snapshots table code
