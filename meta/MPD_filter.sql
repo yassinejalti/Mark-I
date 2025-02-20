@@ -1,24 +1,24 @@
 -- main token data table
 
 CREATE TABLE token_data (
-    id VARCHAR(255) PRIMARY KEY, -- Unique identifier for the token
+    id VARCHAR(255) PRIMARY KEY,
     volume DOUBLE, -- Volume in USD (5-minute interval)
-    buys_count INT, -- Number of buys
-    sells_count INT, -- Number of sells
-    address VARCHAR(255), -- Token contract address
-    marketCap DOUBLE, -- Market capitalization in USD
-    name VARCHAR(255), -- Token name
-    symbol VARCHAR(255), -- Token symbol
-    cur_liq_usd DOUBLE, -- Current liquidity in USD
-    lp_burned_perc DOUBLE, -- Percentage of liquidity pool burned
-    top_holders_perc DOUBLE, -- Percentage of supply held by top 10 holders
+    buys_count INT,
+    sells_count INT,
+    address VARCHAR(255),
+    marketCap DOUBLE,
+    name VARCHAR(255),
+    symbol VARCHAR(255),
+    cur_liq_usd DOUBLE,
+    lp_burned_perc DOUBLE,
+    top_holders_perc DOUBLE,
     twitter VARCHAR(255), -- Twitter link (optional)
     website VARCHAR(255), -- Website link (optional)
-    created_timestamp BIGINT, -- Timestamp of token creation
-    weighted_avg_composite_score DOUBLE, -- Weighted average composite score
-    cumulative_composite_growth DOUBLE, -- Cumulative composite growth
-    priority_level DOUBLE DEFAULT 0, -- Priority level (default is 0)
-    internal_update_timestamp BIGINT -- Timestamp of the last internal update
+    created_timestamp BIGINT,
+    weighted_avg_composite_score DOUBLE NULL, -- Weighted average composite score
+    cumulative_composite_growth DOUBLE NULL, -- Cumulative composite growth
+    priority_level DOUBLE DEFAULT 0,
+    internal_update_timestamp BIGINT
 );
 
 -- snapshots table code
