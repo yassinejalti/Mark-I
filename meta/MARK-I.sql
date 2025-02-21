@@ -26,11 +26,6 @@ CREATE TABLE tokens (
 CREATE TABLE snapshot (
     id INT PRIMARY KEY AUTO_INCREMENT,
     token_id VARCHAR(255),
-    liquidity_growth DOUBLE DEFAULT 0,
-    volume_to_fdv_ratio DOUBLE DEFAULT 0,
-    buy_sell_ratio DOUBLE DEFAULT 0,
-    fdv_growth DOUBLE DEFAULT 0,
-    price_momentum DOUBLE DEFAULT 0,
     composite_score DOUBLE DEFAULT 0,
     created_timestamp BIGINT NOT NULL,
     FOREIGN KEY (token_id) REFERENCES token_data(id)
@@ -65,12 +60,14 @@ BEGIN
     DECLARE v_composite_score DOUBLE;
 
     procedure_block: BEGIN
-        -- Skip if liquidity is not burned sufficiently
         IF p_lp_burned_perc < 97 THEN
             LEAVE procedure_block;
         END IF;
 
-        -- Insert or update the token data
+        -- for the new logic check if the operation that is happening is insert or update
+        -- if it's insert then:
+        -- 
+
         INSERT INTO tokens (
             id, volume, buys_count, sells_count, address, marketCap, name, symbol, 
             cur_liq_usd, lp_burned_perc, top_holders_perc, twitter, website, created_timestamp
